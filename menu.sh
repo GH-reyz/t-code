@@ -111,9 +111,9 @@ ascii=$(cat /usr/bin/test)
 clear
 echo -e "\e[$banner_colour"
 figlet -f $ascii "$banner"
-echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
-echo -e   " \e[$back_text              \e[30m[\e[$box SERVER INFORMATION\e[30m ]\e[1m               \e[m"
-echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
+echo -e "$line┌─────────────────────────────────────────────────┐${NC}"
+echo -e "$back_text│${NC} ${back_text}               • VPS INFORMATION •             ${NC} $back_text│$NC"
+echo -e "$line└─────────────────────────────────────────────────┘${NC}"
 echo -e "  \e[$text User Roles           : Premium "
 echo -e "  \e[$text System Uptime        : $uptime"
 echo -e "  \e[$text Ip Vps/Address       : $IPVPS"
