@@ -154,7 +154,7 @@ echo -e   "  \e[$number [�5]\e[m \e[$below Info All Port\e[m           \e[$num
 echo -e   " \e[$line└─────────────────────────────────────────────────┘\e[m"
 echo -e   " \e[$line┌─────────────────────────────────────────────────┐\e[m"
 echo -e   " \e[$number│ Version       :\e[m \e[$below New-Multiport (V3)             │ "
-echo -e   " \e[$number│ Client Name   :\e[m \e[$below $username                         │\e[m"         
+echo -e   " \e[$number│ Client Name   :\e[m \e[$below $username                       │\e[m"         
 echo -e   " \e[$number│ License       :\e[m \e[$below $exp\e[m $sts              │"
 echo -e   " \e[$number│ AutoScript By :\e[m \e[$below @GHReyz                        │\e[m"
 echo -e   " \e[$line└─────────────────────────────────────────────────┘\e[m"
