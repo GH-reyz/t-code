@@ -21,15 +21,15 @@ tram=$( free -m | awk 'NR==2 {print $2}' )
 swap=$( free -m | awk 'NR==4 {print $2}' )
 DATE=$(date +"%d-%B-%Y")
 # TOTAL ACC CREATE VMESS WS
-totalvm=$(grep -c -E "^#vms " "/usr/local/etc/xray/config.json")
+vmess=$(grep -c -E "^#vms " "/usr/local/etc/xray/vmess.json")
 # TOTAL ACC CREATE  VLESS WS
-totalvl=$(grep -c -E "^#vls " "/usr/local/etc/xray/config.json")
+vless=$(grep -c -E "^#vls " "/usr/local/etc/xray/vless.json")
 # TOTAL ACC CREATE  VLESS TCP XTLS
-totaltcp=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
+xtls=$(grep -c -E "^#vxtls " "/usr/local/etc/xray/config.json")
 # TOTAL ACC CREATE  TROJAN
-totaltr=$(grep -c -E "^#trx " "/usr/local/etc/xray/config.json")
-# TOTAL ACC CREATE  TROJAN GO
-totalgo=$(grep -c -E "^### " "/etc/trojan-go/akun.conf")
+trtls=$(grep -c -E "^#trx " "/usr/local/etc/xray/tcp.json")
+# TOTAL ACC CREATE  TROJAN WS TLS
+trws=$(grep -c -E "^#trws " "/usr/local/etc/xray/trojan.json")
 # TOTAL ACC CREATE OVPN SSH
 total_ssh="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)"
 red=='\e[0;31m'
@@ -127,7 +127,7 @@ echo -e "  \e[$text Date Location        : $DATE"
 echo -e "  \e[$text Ip Vps/Address       : $IPVPS"
 echo -e "  \e[$text Domain Name          : $domain\e[0m"
 echo -e "  \e[$text Telegram             : @GHReyz"
-echo -e "  \e[$text Script Version       : Multiport (V3)"
+echo -e "  \e[$text Script Version       : New-Multiport (V3)"
 echo -e "  \e[$text Order ID             : $oid"
 echo -e "  \e[$text Certificate Status   :\e[1;31m Expired in $certifacate days"
 echo -e "  \e[$text Provided By          : $creditt"
@@ -140,19 +140,19 @@ echo -e   " \e[$line────────────────────
 echo -e   " \e[$line      ┌───────────────────────────────────┐\e[m"
 echo -e   "                   LIST ACCOUNTS\e                         \e[m"
 echo -e  "        ───────────────────────────────────  " | lolcat
-echo -e  "              SSH/OVPN  :\e[m \e[$text $total_ssh Account "
-echo -e  "              VMESS     :\e[m \e[$text $totalvm Account  "  
-echo -e  "              VLESS     :\e[m \e[$text $totalvl Account "
-echo -e  "              VLESSTCP  :\e[m \e[$text $totaltcp Account "
-echo -e  "              TROJAN    :\e[m \e[$text $totaltr Account "
-echo -e  "              TROJAN-GO :\e[m \e[$text $totalgo Account "
+echo -e  "              SSH/OVPN  :\e[m \e[$text $ssh Account "
+echo -e  "              VMESS     :\e[m \e[$text $vmess Account  "  
+echo -e  "              VLESS     :\e[m \e[$text $vless Account "
+echo -e  "              VLESSTCP  :\e[m \e[$text $xtls Account "
+echo -e  "              TROJAN-WS :\e[m \e[$text $trws Account "
+echo -e  "              TROJAN-TLS:\e[m \e[$text  $trtls Account "
 echo -e   " \e[$line      └───────────────────────────────────┘\e[m"
 echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
 echo -e   " \e[$back_text                    \e[30m[\e[$box MAIN MENU\e[30m ]\e[1m                  \e[m"
 echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
 echo -e   "  \e[$number [�1]\e[m \e[$below Openssh & Openvpn\e[m       \e[$number [�6]\e[m \e[$below Menu  Themes\e[m"
 echo -e   "  \e[$number [�2]\e[m \e[$below Xray Vmess & Vless\e[m      \e[$number [�7]\e[m \e[$below Clear Log Vps\e[m"
-echo -e   "  \e[$number [�3]\e[m \e[$below Trojan Xray & Go\e[m        \e[$number [�8]\e[m \e[$below Change Port \e[m"
+echo -e   "  \e[$number [�3]\e[m \e[$below Trojan Xray & Ws\e[m        \e[$number [�8]\e[m \e[$below Change Port \e[m"
 echo -e   "  \e[$number [�4]\e[m \e[$below System Menu\e[m             \e[$number [�9]\e[m \e[$below Check Running \e[m"
 echo -e   "  \e[$number [�5]\e[m \e[$below Info All Port\e[m           \e[$number [�10]\e[m\e[$below REBOOT Vps\e[m"
 echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
