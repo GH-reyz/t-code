@@ -30,7 +30,7 @@ clear
 echo -e ""
 echo -e "${green}Permission Accepted...${NC}"
 echo ""
-echo "Thanks For Using This Autoscript-Lite By comingsoon"
+echo "Thanks For Using This Autoscript-Lite By GH"
 echo ""
 sleep 3
 else
