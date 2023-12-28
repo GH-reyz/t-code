@@ -1,10 +1,19 @@
-# Script Premium New-V3
+# SEBELUM INSTALL BACA DULU. TAK FAHAM GOOGLE TRANSLATE
+- script ni percuma dan tak perlu minta izin nak install
+- tak perlu donate apa2 sebab saya tak mau duit anda
+- boleh feedback jika ada masalah ( masalah script saja saya layan)
+- masalah tak tau install tak tau subdomain tu apa atau masalah kecik2 maaf saya tak dak masa layan
+- saya dah guna di vps digital ocean / linode / shinjiru / myklnet / ovh dan tak masalah apa2.
+- sila training banyak2 kali install script ctech smpai pandai https://t.me/+TfT_DO4Q8LdlMTY1 kemudian baru install script ni sbb kat sana ramai cikgu baik2
+- enjoy jelah tak suka abaikan...
 
- <h2 align="center">AutoScript VPN By GHReyz <img src="https://img.shields.io/badge/Version-6.0-blue.svg"></h2>
-
+# FIX SCRIPT
+- backup script issue fix
+                                           
+<h2 align="center"> Autoscript by HazzuanHashim</h2>
 
 <h2 align="center"> Supported Linux Distribution</h2>
-<p align="center"><img src="https://d33wubrfki0l68.cloudfront.net/5911c43be3b1da526ed609e9c55783d9d0f6b066/9858b/assets/img/debian-ubuntu-hover.png"></p>
+<p align="center"><img src="https://linuxconfig.org/wp-content/uploads/2018/05/debian_vs_ubuntu.png"></p>
 <p align="center"><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2010&message=Buster&color=blue"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=debian&label=Debian%2011&message=Bullseye&color=blue"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2018&message=18.04 LTS&color=blue"> <img src="https://img.shields.io/static/v1?style=for-the-badge&logo=ubuntu&label=Ubuntu%2020&message=20.04 LTS&color=blue"></p>
 
 <p align="center"><img src="https://img.shields.io/badge/Service-OpenSSH-success.svg"> <img src="https://img.shields.io/badge/Service-Dropbear-success.svg">  <img src="https://img.shields.io/badge/Service-Websocket-success.svg"> <img src="https://img.shields.io/badge/Service-BadVPN-success.svg">  <img src="https://img.shields.io/badge/Service-Stunnel-success.svg">  <img src="https://img.shields.io/badge/Service-OpenVPN-success.svg">  <img src="https://img.shields.io/badge/Service-Squid3-success.svg">  <img   src="https://img.shields.io/badge/Service-Webmin-success.svg">  <img src="https://img.shields.io/badge/Service-OHP-success.svg">  <img
@@ -16,21 +25,18 @@ src="https://img.shields.io/badge/Service-Xray-success.svg">  <img src= "https:/
 
   ```html
   apt-get update && apt-get upgrade -y && update-grub && sleep 2 && reboot
-
   ```
 
 ## Update & Upgrade First Your VPS for Ubuntu 18.04 & 20.04
 
   ```html
   apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && sleep 2 && reboot
-
   ```
  
 ## INSTALLATION SCRIPT
 
   ```html
-  sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/GH-reyz/new-v3/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
-
+  sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/Hazzuan1984/t-code/main/setup2.sh && chmod +x setup2.sh && sed -i -e 's/\r$//' setup2.sh && screen -S setup2 ./setup2.sh
   ```
  
  ## Copy & paste 👇👇 to your VPS if ERROR (WG ONLY)
@@ -42,17 +48,25 @@ printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' >/etc/apt/prefe
 apt update
 apt install -y wireguard-tools iptables iptables-persistent
 apt install -y linux-headers-$(uname -r)
- 
   ```
  
    ```html
 systemctl restart wg-quick@wg0
-
   ```
 
-## Description :
+## Info :
 
-  Service & Port
+ ## Script FREE using license key 
+
+   ```html
+  comingsoonFreeAutoscripts
+  ```
+ 
+Feedback to owner on Telegram hazzuan <a href="https://t.me/HazzuanHashim" target=”_blank”><img src="https://img.shields.io/static/v1?style=for-the-badge&logo=Telegram&label=Telegram&message=Click%20Here&color=blue"></a> to fix BUG (slow respond)
+
+# Description :
+
+  ## Service & Port
 
   - OpenSSH                 : 22
   - OpenVPN                 : TCP 1194, UDP 2200, SSL 110
@@ -61,10 +75,10 @@ systemctl restart wg-quick@wg0
   - OHP Dropbear            : 8585
   - OHP SSH                 : 8686
   - OHP OpenVPN             : 8787
-  - Websocket SSH(HTTP)     : 80
-  - Websocket SSL(HTTPS)    : 443, 222
+  - Websocket SSH(HTTP)     : 2081
+  - Websocket SSL(HTTPS)    : 222
   - Websocket OpenVPN       : 2084
-  - Squid Proxy             : 3128, 8080, 8000
+  - Squid Proxy             : 3128, 8000
   - Badvpn                  : 7100, 7200, 7300
   - Nginx                   : 81
   - Wireguard               : 5820
@@ -75,12 +89,12 @@ systemctl restart wg-quick@wg0
   - XRAY Vless Ws Tls       : 443
   - XRAY Trojan Ws Tls      : 443
   - XRAY Vless Tcp Xtls     : 443
-  - XRAY Trojan Tcp Tls     : 443
   - XRAY Vmess Ws None Tls  : 80
-  - XRAY Vless Ws None Tls  : 80
-  - XRAY Trojan Ws None Tls : 80
+  - XRAY Vless Ws None Tls  : 8080
+  - XRAY Trojan Ws None Tls : 8880
+  - Trojan Go               : 8443
 
- >>> Server Information & Other Features
+  ## Server Information & Other Features
    - Timezone                 : Asia/Kuala_Lumpur (GMT +8)
    - Fail2Ban                 : [ON]
    - DDOS Dflate              : [ON]
@@ -99,11 +113,13 @@ systemctl restart wg-quick@wg0
 
 ## Credit :
 
-*   GHReyz
+*   Hazzuan
+*   Vinstechmy
+*   V-code
+*   ꜱᴀᴍꜱꜰx
 
-*  Bukan Leak
 
 <p align="center">
-  <a><img src="https://img.shields.io/badge/Copyright%20©-MATKILAU%20AutoScriptVPN%202022.%20All%20rights%20reserved...-blueviolet.svg" style="max-width:200%;">
+  <a><img src="https://img.shields.io/badge/Copyright%20©-HazzuanHashim%20AutoScriptVPN%202022.%20All%20rights%20reserved...-blueviolet.svg" style="max-width:200%;">
     </p>
    </p>
