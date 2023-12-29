@@ -4,6 +4,31 @@
 GitUser="GH-reyz"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
+echo -e "\e[32mloading...\e[0m"
+clear
+# Valid Script
+VALIDITY () {
+    today=`date -d "0 days" +"%Y-%m-%d"`
+    Exp1=$(curl https://raw.githubusercontent.com/${GitUser}/registerv3/main/ip.conf | grep $MYIP | awk '{print $4}')
+    if [[ $today < $Exp1 ]]; then
+    echo -e "\e[32mYOUR SCRIPT ACTIVE..\e[0m"
+    else
+    echo -e "\e[31mYOUR SCRIPT HAS EXPIRED!\e[0m";
+    echo -e "\e[31mPlease renew your ipvps first\e[0m"
+    exit 0
+fi
+}
+IZIN=$(curl https://raw.githubusercontent.com/${GitUser}/registerv3/main/ip.conf | awk '{print $5}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
+echo -e "\e[32mPermission Accepted...\e[0m"
+VALIDITY
+else
+echo -e "\e[31mPermission Denied!\e[0m";
+echo -e "\e[31mPlease buy script first\e[0m"
+exit 0
+fi
+echo -e "\e[32mloading...\e[0m"
+clear
 # PROVIDED
 creditt=$(cat /root/provided)
 # BANNER COLOUR
@@ -1100,6 +1125,196 @@ echo -e "\e[0;32mDone\e[0m"
 sleep 0.5
 menu
 }
+# MENU THEME
+function menu11 () {
+clear
+echo ""
+echo -e "   \e[$line════════════════════════════════════════\e[m"
+echo -e "   \e[$back_text           \e[30m═[\e[$box THEME COLOURS\e[30m ]═          \e[m"
+echo -e "   \e[$line════════════════════════════════════════\e[m"
+echo -e "   \e[$number (•1)\e[m \e[1;31m Youtube Style\e[m"
+echo -e "   \e[$number (•2)\e[m \e[1;34m Facebook Style\e[m"
+echo -e "   \e[$number (•3)\e[m \e[1;32m Whatsapp Style\e[m"
+echo -e "   \e[$number (•4)\e[m \e[1;35m Squid Game Style\e[m"
+echo -e "   \e[$number (•5)\e[m \e[1;31m Horror Style\e[m"
+echo -e "   \e[$number (•6)\e[m \e[1;36m Colour Cyan Style\e[m"
+echo -e "   \e[$number (•7)\e[m \e[1;33m Default Theme\e[m"
+echo -e ""
+echo -e "   \e[$line════════════════════════════════════════\e[m"
+echo -e "   \e[$back_text \e[$box x) Themes Menu                        \e[m"
+echo -e "   \e[$line════════════════════════════════════════\e[m"
+echo -e "\e[$line"
+read -rp "  Please Enter 1-7 or x : " -e bc
+if [[ "$bc" = "1" ]]; then
+clear
+# Colour Banner
+echo "1;31m" > /etc/banner
+# Colour in the box menu
+echo "30m" > /etc/box
+# Colour line menu
+echo "1;31m" > /etc/line
+# Colour top menu
+echo "1;31m" > /etc/text
+# Colour bot menu
+echo "1;31m" > /etc/below
+# Colour backround
+echo "47m" > /etc/back
+# Colour number
+echo "1;37m" > /etc/number
+# Font banner
+echo 3d > /usr/bin/test
+# Banner Name
+echo YouTube > /usr/bin/bannerku
+echo -e "Succesfully Set Youtube Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "2" ]]; then
+clear
+# Colour Banner
+echo "1;34m" > /etc/banner
+# Colour in the box menu
+echo "1;37m" > /etc/box
+# Colour line menu
+echo "1;30m" > /etc/line
+# Colour top menu
+echo "1;34m" > /etc/text
+# Colour bot menu
+echo "1;34m" > /etc/below
+# Colour backround
+echo "1;36m" > /etc/back
+# Colour number
+echo "1;37m" > /etc/number
+# Font banner
+echo Standard > /usr/bin/test
+# Banner Name
+echo Facebook > /usr/bin/bannerku
+echo -e "Succesfully Set Facebook Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "3" ]]; then
+clear
+# Colour Banner
+echo "1;32m" > /etc/banner
+# Colour in the box menu
+echo "1;37m" > /etc/box
+# Colour line menu
+echo "1;32m" > /etc/line
+# Colour top menu
+echo "1;32m" > /etc/text
+# Colour bot menu
+echo "1;32m" > /etc/below
+# Colour backround
+echo "42m" > /etc/back
+# Colour number
+echo "1;37m" > /etc/number
+# Font banner
+echo Slant > /usr/bin/test
+# Banner Name
+echo WhatsApp > /usr/bin/bannerku
+echo -e "Succesfully Set WhatsApp Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "4" ]]; then
+clear
+# Colour Banner
+echo "1;35m" > /etc/banner
+# Colour in the box menu
+echo "30m" > /etc/box
+# Colour line menu
+echo "1;35m" > /etc/line
+# Colour top menu
+echo "1;35m" > /etc/text
+# Colour bot menu
+echo "1;35m" > /etc/below
+# Colour backround
+echo "47m" > /etc/back
+# Colour number
+echo "1;37m" > /etc/number
+# Font banner
+echo Braced > /usr/bin/test
+# Banner Name
+echo Squid Game > /usr/bin/bannerku
+echo -e "Succesfully Set Squid Game Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "5" ]]; then
+clear
+# Colour Banner
+echo "1;31m" > /etc/banner
+# Colour in the box menu
+echo "30m" > /etc/box
+# Colour line menu
+echo "1;31m" > /etc/line
+# Colour top menu
+echo "1;31m" > /etc/text
+# Colour bot menu
+echo "1;31m" > /etc/below
+# Colour backround
+echo "41m" > /etc/back
+# Colour number
+echo "1;31m" > /etc/number
+# Font banner
+echo Bloody > /usr/bin/test
+# Banner Name
+echo SILENCE > /usr/bin/bannerku
+echo -e "Succesfully Set Horror Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "6" ]]; then
+clear
+# Colour Banner
+echo "1;36m" > /etc/banner
+# Colour in the box menu
+echo "30m" > /etc/box
+# Colour line menu
+echo "1;36m" > /etc/line
+# Colour top menu
+echo "1;36m" > /etc/text
+# Colour bot menu
+echo "1;36m" > /etc/below
+# Colour backround
+echo "47m" > /etc/back
+# Colour number
+echo "1;37m" > /etc/number
+# Font banner
+echo 3d > /usr/bin/test
+# Banner Name
+echo Premium > /usr/bin/bannerku
+echo -e "Succesfully Set Colour Cyan Style."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "7" ]]; then
+clear
+echo "1;37m" > /etc/banner
+echo "30m" > /etc/box
+echo "1;31m" > /etc/line
+echo "1;36m" > /etc/text
+echo "1;33m" > /etc/below
+echo "47m" > /etc/back
+echo "1;35m" > /etc/number
+echo 3d > /usr/bin/test
+# Banner Name
+echo Premium > /usr/bin/bannerku
+echo -e "Succesfully Set Default Theme."
+echo -e "\e[0;32mDone\e[0m"
+sleep 0.5
+menu
+elif [[ "$bc" = "x" ]]; then
+themes
+else
+clear
+echo -e "\e[1;31mYou Entered The Wrong Number, Please Try Again!\e[0m"
+sleep 1
+themes
+fi
+}
+# MENU 
 clear
 echo ""
 echo -e "   \e[$line════════════════════════════════════════\e[m"
@@ -1115,12 +1330,13 @@ echo -e "   \e[$number (•7)\e[m \e[$below Change Text Colour In The Box Menu\e
 echo -e "   \e[$number (•8)\e[m \e[$below Change Backgroud Colour Of The Text Menu\e[m"
 echo -e "   \e[$number (•9)\e[m \e[$below Change Colour Of The Number Menu\e[m"
 echo -e "   \e[$number (10)\e[m \e[$below Change Vps Provider Name\e[m"
+echo -e "   \e[$number (11)\e[m \e[$below Change Theme Style\e[m"
 echo -e ""
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "   \e[$back_text \e[$box x) Main Menu                          \e[m"
 echo -e "   \e[$line════════════════════════════════════════\e[m"
 echo -e "\e[$line"
-read -rp "  Please Enter 1-10 or x : " -e num
+read -rp "  Please Enter 1-11 or x : " -e num
 if [[ "$num" = "1" ]]; then
 menu1
 elif [[ "$num" = "2" ]]; then
@@ -1141,6 +1357,8 @@ elif [[ "$num" = "9" ]]; then
 menu9
 elif [[ "$num" = "10" ]]; then
 menu10
+elif [[ "$num" = "11" ]]; then
+menu11
 elif [[ "$num" = "x" ]]; then
 menu
 else
