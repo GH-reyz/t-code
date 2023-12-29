@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script Auto Reboot Vps
 #wget https://github.com/${GitUser}/
-GitUser="GH-reyz"
+GitUser="KhaiVpn767"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 # PROVIDED
@@ -121,7 +121,7 @@ cat>/usr/local/etc/xray/$user-KUNING.json<<EOF
       {
       "v": "2",
       "ps": "VMESS-NTLS-KUNING-${user}",
-      "add": "162.159.134.61",
+      "add": "api.useinsider.com",
       "port": "${none}",
       "id": "${uuid}",
       "aid": "0",
@@ -189,7 +189,7 @@ proxies:
         Host: ${sts}${domain}
     udp: true
   - name: KUNING-$user
-    server: 162.159.134.61
+    server: api.useinsider.com
     port: ${none}
     type: vmess
     uuid: ${uuid}
