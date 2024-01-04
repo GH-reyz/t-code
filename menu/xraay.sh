@@ -1,7 +1,7 @@
 #!/bin/bash
 #Script Auto Reboot Vps
 #wget https://github.com/${GitUser}/
-GitUser="KhaiVpn767"
+GitUser="GH-reyz"
 #IZIN SCRIPT
 MYIP=$(curl -sS ipv4.icanhazip.com)
 # PROVIDED
@@ -121,7 +121,7 @@ cat>/usr/local/etc/xray/$user-KUNING.json<<EOF
       {
       "v": "2",
       "ps": "VMESS-NTLS-KUNING-${user}",
-      "add": "api.useinsider.com",
+      "add": "162.159.134.61",
       "port": "${none}",
       "id": "${uuid}",
       "aid": "0",
@@ -189,7 +189,7 @@ proxies:
         Host: ${sts}${domain}
     udp: true
   - name: KUNING-$user
-    server: api.useinsider.com
+    server: 162.159.134.61
     port: ${none}
     type: vmess
     uuid: ${uuid}
@@ -420,6 +420,21 @@ proxies:
       headers:
         Host: opensignal.com
     udp: true
+- name: MAXIS-REBORN-${user}
+    server: zn0ejuwm5vp5oqszq-maxiscx.siteintercept.qualtrics.com
+    port: $none
+    type: vless
+    uuid: ${uuid}
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ${sts}${domain}
+    network: ws
+    ws-opts:
+      path: 
+      headers:
+        Host: zn0ejuwm5vp5oqszq-maxiscx.siteintercept.qualtrics.com.${sts}${domain}
+    udp: true
 proxy-groups:
   - name: VLESS-AUTOSCRIPT-khaiVPN
     type: select
@@ -456,6 +471,7 @@ vlesslink4="vless://${uuid}@162.159.134.61:$none?type=ws&encryption=none&securit
 vlesslink5="vless://${uuid}@${domain}:$none?type=ws&encryption=none&security=none&host=${sts}m.pubgmobile.com&path=$patch#VLESS-NTLS-UMOBILE-FUNZ-${user}"
 vlesslink6="vless://${uuid}@104.17.113.188:$none?type=ws&encryption=none&security=none&host=${sts}cdn.who.int.${domain}&path=$patch#VLESS-NTLS-YES-${user}"
 vlesslink7="vless://${uuid}@${sts}${domain}:$tls?type=ws&encryption=none&security=tls&host=opensignal.com&path=$patch&allowInsecure=1&sni=opensignal.com$sni#VLESS-TLS-SELCOM-0BASIC-${user}"
+vlesslink8="vless://${uuid}@zn0ejuwm5vp5oqszq-maxiscx.siteintercept.qualtrics.com:$none?type=ws&encryption=none&security=none&host=${sts}zn0ejuwm5vp5oqszq-maxiscx.siteintercept.qualtrics.com.${domain}&path=#VLESS-NTLS-MAXIS-REBORN-${user}"
 systemctl restart xray@vless
 systemctl restart xray@vnone
 clear
@@ -485,6 +501,8 @@ echo -e "\e[$line═════════════════════
 echo -e "Link YES          : ${vlesslink6}"
 echo -e "\e[$line═════════════════════════════════\e[m"
 echo -e "Link SELCOM-0BASIC: ${vlesslink7}"
+echo -e "\e[$line═════════════════════════════════\e[m"
+echo -e "Link MAXIS-REBORN : ${vlesslink8}"
 echo -e "\e[$line═════════════════════════════════\e[m"
 echo -e "Link Yaml  : http://$MYIP:81/$user-VLESS-WS.yaml"
 echo -e "\e[$line═════════════════════════════════\e[m"
