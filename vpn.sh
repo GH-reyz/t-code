@@ -57,26 +57,21 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
-
-setenv FRIENDLY_NAME "Ovpn Tcp"
-http-proxy xxxxxxxxx 3128
-http-proxy-option CUSTOM-HEADER CONNECT HTTP/1.1
-http-proxy-option CUSTOM-HEADER Host bug.com
-http-proxy-option CUSTOM-HEADER X-Online-Host bug.com
-http-proxy-option CUSTOM-HEADER X-Forward-Host bug.com
-http-proxy-option CUSTOM-HEADER Connection: keep-alive
 END
 
 sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/client-udp-2200.ovpn <<-END
-########## WELCOME ###########
-########### OVPN  ############
+############## WELCOME TO ReyzVPN ###############
+############## By ReyzVPN ###############
+setenv FRIENDLY_NAME "GHReyz TCP"
 client
 dev tun
-proto udp
-remote $domain 2200
+proto tcp
+setenv CLIENT_CERT 0
+remote $domain 1194
+http-proxy xxxxxxxxx 8000
 resolv-retry infinite
 route-method exe
 nobind
@@ -88,7 +83,6 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
-setenv FRIENDLY_NAME "Ovpn Udp"
 END
 
 sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;
