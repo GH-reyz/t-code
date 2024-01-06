@@ -42,29 +42,6 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 cat > /etc/openvpn/client-tcp-1194.ovpn <<-END
 ########## WELCOME ###########
 ########### OVPN  ############
-client
-dev tun
-proto tcp
-remote $domain 1194
-resolv-retry infinite
-route-method exe
-nobind
-remote-cert-tls server
-cipher AES-256-CBC
-auth SHA256
-persist-key
-persist-tun
-auth-user-pass
-comp-lzo
-verb 3
-END
-
-sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
-
-# Buat config client UDP 2200
-cat > /etc/openvpn/client-udp-2200.ovpn <<-END
-############## WELCOME TO ReyzVPN ###############
-############## By ReyzVPN ###############
 setenv FRIENDLY_NAME "GHReyz TCP"
 client
 dev tun
@@ -83,6 +60,30 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
+END
+
+sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
+
+# Buat config client UDP 2200
+cat > /etc/openvpn/client-udp-2200.ovpn <<-END
+########## WELCOME ###########
+########### OVPN  ############
+client
+dev tun
+proto udp
+remote $domain 2200
+resolv-retry infinite
+route-method exe
+nobind
+remote-cert-tls server
+cipher AES-256-CBC
+auth SHA256
+persist-key
+persist-tun
+auth-user-pass
+comp-lzo
+verb 3
+setenv FRIENDLY_NAME "Ovpn Udp"
 END
 
 sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;
