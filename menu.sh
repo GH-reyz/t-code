@@ -141,12 +141,12 @@ echo -e   " \e[$line────────────────────
 echo -e   " \e[$line      ┌───────────────────────────────────┐\e[m"
 echo -e   "                   LIST ACCOUNTS\e                         \e[m"
 echo -e  "        ───────────────────────────────────  " | lolcat
-echo -e  "         »»» SSH/OVPN   :\e[m \e[$text $total_ssh Account "
-echo -e  "         »»» VMESS WS   :\e[m \e[$text $totalvm Account  "  
-echo -e  "         »»» VLESS WS   :\e[m \e[$text $totalvl Account "
-echo -e  "         »»» VLESS XTLS :\e[m \e[$text $totaltcp Account "
-echo -e  "         »»» TROJAN TCP :\e[m \e[$text $totaltr Account "
-echo -e  "         »»» TROJAN GO  :\e[m \e[$text $totalgo Account "
+echo -e  "           »»  SSH/OVPN   :\e[m \e[$text $total_ssh Account "
+echo -e  "           »»  VMESS WS   :\e[m \e[$text $totalvm Account  "  
+echo -e  "           »»  VLESS WS   :\e[m \e[$text $totalvl Account "
+echo -e  "           »»  VLESS XTLS :\e[m \e[$text $totaltcp Account "
+echo -e  "           »»  TROJAN TCP :\e[m \e[$text $totaltr Account "
+echo -e  "           »»  TROJAN GO  :\e[m \e[$text $totalgo Account "
 echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
 echo -e   " \e[$back_text                    \e[30m[\e[$box MAIN MENU\e[30m ]\e[1m                  \e[m"
 echo -e   " \e[$line───────────────────────────────────────────────────\e[m"
@@ -167,19 +167,19 @@ read -p   "   Select From Options [1-12 or x] :  " menu
 echo -e   ""
 case $menu in
 1)
-xraay
+ssh
 ;;
 2)
-trojaan
+xraay
 ;;
 3)
-wgr
+trojaan
 ;;
 4)
 ssssr
 ;;
 5)
-ssh
+wgr
 ;;
 6)
 system
